@@ -8,7 +8,7 @@ class AddMember:
         self._driver = driver
 
     def add_memeber(self):
-        # sendkeys name
+        # send keys name
         sleep(3)
         self._driver.find_element(By.ID, "username").send_keys("Kevin")
         self._driver.find_element(By.ID, "memberAdd_acctid").send_keys("Kevin")
