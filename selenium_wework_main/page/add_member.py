@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
-
+from time import sleep
 
 class AddMember:
 
@@ -9,5 +9,11 @@ class AddMember:
 
     def add_memeber(self):
         # sendkeys name
+        sleep(3)
         self._driver.find_element(By.ID, "username").send_keys("Kevin")
-        pass
+        self._driver.find_element(By.ID, "memberAdd_acctid").send_keys("Kevin")
+        self._driver.find_element(By.ID, "memberAdd_phone").send_keys("11111111111")
+        self._driver.find_element(By.NAME, "sendInvite").click()
+        self._driver.find_element(By.CSS_SELECTOR, ".js_btn_save").click()
+        sleep(3)
+        return True
