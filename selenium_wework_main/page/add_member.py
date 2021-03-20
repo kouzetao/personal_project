@@ -19,8 +19,5 @@ class AddMember:
         return True
     def get_member(self):
         elements = self._driver.find_elements(By.CSS_SELECTOR, ".member_colRight_memberTable_td:th-chile(2)")
-        list = []
-        for element in elements:
-            list.append(element.get_attribute("title"))
+        return [element.get_attribute("title") for element in elements] # 遍历elements取出的title生成list
 
-        return list
