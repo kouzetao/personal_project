@@ -6,4 +6,7 @@ class TestAddMember:
         self.main = Main()
 
     def test_addmember(self):
-        assert self.main.goto_add_member().add_memeber()
+        add_member = self.main.goto_add_member()
+        add_member.add_member()
+        sleep(2)
+        assert "Kevin" in add_member.get_member()
